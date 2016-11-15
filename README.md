@@ -15,11 +15,17 @@ With `$NUM` > 1, a JSON list containing that many random names will be printed, 
 Import the module and call `names_generator.get()`
 
 ## Parameters for `get()`
-- `unique` - if `True`, guarantees that every word in every name will only appear once. Will raise a `ValueError` if one of the lists (left or right side) is exhausted.
+- `unique` - if `True`, guarantees that every word in every name will only appear once. If one of the lists is exhausted, will print a warning to STDOUT and return all names generated up to that point.
+
+  Default: `False`
 
 - `number` - number of names to generate. Will return a simple string if `number == 1` or a JSON list if `number > 1`
 
-- `separator` - what symbol to separate the left and right side of the name with. Defaults to `_` (underscore)
+  Default: `1`
+
+- `separator` - what symbol to separate the left and right side of the name with.
+
+  Default:`_` (underscore)
 
 ## Credits
 
