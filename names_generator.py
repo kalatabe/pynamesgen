@@ -17,6 +17,7 @@ def make_name(s='_', u=False):
 
 def get(n=1, separator='_', unique=False):
     if n == 1:
+        print('Content-type: text/plain\n')
         return make_name(separator, unique)
 
     names = []
@@ -31,12 +32,11 @@ def get(n=1, separator='_', unique=False):
     if 'boring{}wozniak'.format(separator) in names:
         # Unacceptable.
         names.remove('boring{}wozniak'.format(separator))
-    print('Content-type: application/json')
+    print('Content-type: application/json\n')
     return dumps(names)
 
 
 if __name__ == '__main__':
-    print("HTTP/1.0 200 OK")
     n = os.getenv('QUERY_STRING')
     try: 
         n = int(n)
