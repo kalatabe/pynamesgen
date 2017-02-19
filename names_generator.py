@@ -54,4 +54,4 @@ if __name__ == '__main__':
         n = int(n)
     except ValueError:
         n = 1
-    print(get(n if n > 0 else 1))
+    print(get(n))
